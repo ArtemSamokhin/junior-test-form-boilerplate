@@ -1,4 +1,5 @@
 import { ImageList } from './components';
+import { Form } from './components';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       </header>
       <main>
         <section>
+          <Form />
           <ImageList />
         </section>
       </main>

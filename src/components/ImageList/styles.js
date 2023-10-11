@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 export const ImageListWrapper = styled.div`
-  background-color: red;
+  background-color: transparent;
 `;
