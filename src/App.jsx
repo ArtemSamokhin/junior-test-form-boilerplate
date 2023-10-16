@@ -1,5 +1,5 @@
-import { ImageList } from './components';
-import { Form } from './components';
+import { ImageList } from './components/ImageList/ImageList';
+import { Form } from './components/Form/Form';
 
 function App() {
   return (
