@@ -10,7 +10,7 @@ export const ImageList = () => {
 
   const fetchPhotos = async () => {
     try {
-      const url = `https://api.unsplash.com/photos/random?client_id=${MY_KEY}&count=4`;
+      const url = `https://api.unsplash.com/photos/random?client_id=${MY_KEY}&count=5`;
       const response = await fetch(url);
       const data = await response.json();
 
@@ -26,30 +26,21 @@ export const ImageList = () => {
 
   return (
     <ImageListWrapper>
-      {error && (
-        <div className="container">
-          <button onClick={fetchPhotos} className="new-photos">
-            Нажмите, чтобы увидеть новые фотографии!
-          </button>
-          <div className="error-message">
-            При загрузке фотографий произошла ошибка. Пожалуйста, повторите
-            попытку позже.
-          </div>
-        </div>
-      )}
       {photos.length > 0 && (
-        <div className="container">
-          <p className="desc">
-            Простой веб-сайт, использующий Unsplash API для генерации случайных
-            фотографии в виде карточек
-          </p>
-          <button onClick={fetchPhotos} className="new-photos">
-            Нажмите, чтобы увидеть новые фотографии!
-          </button>
+        <div>
           {photos.map((photo) => (
-            <div className="photo-div" key={photo.id}>
-              <img src={photo.urls.regular} alt={photo.alt_description} />
-              <p className="photo-desc">{photo.alt_description}</p>
+            <div key={photo.id}>
+              <h2>{photo.alt_description}</h2>
+              <p>
+                Дата добавления:
+                <span> {photo.created_at}</span>
+              </p>
+              <img
+                width={320}
+                height={200}
+                src={photo.urls.regular}
+                alt={photo.alt_description}
+              />
             </div>
           ))}
         </div>

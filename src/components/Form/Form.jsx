@@ -22,10 +22,6 @@ export const Form = () => {
           placeholder="Yosemite National Park"
           {...register('namePhoto', {
             required: 'Наименование фото не заполнено',
-            minLength: {
-              value: 2,
-              message: 'Минимальная длина имени: 2',
-            },
           })}
         />
       </label>
